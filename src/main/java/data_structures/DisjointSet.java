@@ -34,4 +34,5 @@ public class DisjointSet {
         parent[set]= set != parent[set]?findSet(parent[set]):parent[set];
         return parent[set];
     }
+
 }
