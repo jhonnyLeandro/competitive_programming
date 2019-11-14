@@ -3,36 +3,60 @@ package data_structures;
 public class DisjointSet {
     private int parent[];
     private int rank[];
+    private int numOfDisjointSets;
 
     DisjointSet(int numberOfSets) {
-        parent = new int[numberOfSets + 1 ];
-        rank= new int[numberOfSets + 1];
+        parent = new int[numberOfSets];
+        rank = new int[numberOfSets];
         createSets(numberOfSets);
+        numOfDisjointSets = numberOfSets;
     }
 
-    void createSets(int numberOfSets){
-        for (int i = 1; i <= numberOfSets; i++){
+    private void createSets(int numberOfSets){
+        for (int i = 0; i < numberOfSets; i++){
             parent[i] = i;
-            rank[i] = 0;
         }
     }
 
-    void mergeSets(int x, int y){
-        int parentx = findSet(x);
-        int parenty = findSet(y);
+    public void mergeSets(int x, int y){
+        if (!isSameSet(x,y)){
 
-        if (rank[parentx] > rank[parenty]){
-            parent[parenty] = parentx;
-            rank[parentx] +=1;
-        } else {
-            parent[parentx] = parenty;
-            rank[parenty]+=1;
+            numOfDisjointSets--;
+
+            int parentx = findSet(x);
+            int parenty = findSet(y);
+
+            if (rank[parentx] > rank[parenty]){
+                parent[parenty] = parentx;
+                rank[parentx]++;
+            } else {
+                parent[parentx] = parenty;
+                rank[parenty]++;
+            }
         }
     }
 
-    int findSet(int set){
-        parent[set]= set != parent[set]?findSet(parent[set]):parent[set];
-        return parent[set];
+    public int findSet(int set){
+       return set == parent[set]? set : (parent[set] = findSet(parent[set]));
+    }
+
+    public int numDisjointSets(){
+        return numOfDisjointSets;
+    }
+
+    public boolean isSameSet(int x, int y){
+        return findSet(x) == findSet(y);
+    }
+
+    public int sizeOfSet(int set){
+        int p = findSet(set);
+        int size = 0;
+        for(int i = 0; i < parent.length; i++){
+            if(p == parent[i]){
+                size++;
+            }
+        }
+        return size;
     }
 
 }
