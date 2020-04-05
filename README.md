@@ -1,3 +1,6 @@
-# competitive_programming
+# Competitive Programming 
 
-This repository is intended to have solutions to the exercises in uva online judge
+In this repository i will save all the solved exercices from different online judges, for example:
+
+- Uva Online Judge
+- Code Forces
