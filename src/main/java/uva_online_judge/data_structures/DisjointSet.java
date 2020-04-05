@@ -1,4 +1,4 @@
-package data_structures;
+package uva_online_judge.data_structures;
 
 public class DisjointSet {
     private int parent[];
