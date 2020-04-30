@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/*
+*  10141 uva problem
+*  Request for proposal
+**/
+
 public class RequestForProposal {
     public static void main (String args[]) throws IOException {
         //initialize the bufferedReader to read the console
