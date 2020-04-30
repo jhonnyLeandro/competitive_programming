@@ -45,11 +45,6 @@ public class BenderBRodriguez {
 
         // rules for -y
         yminus.put("+x","-y");
-
-
-
-
-
         yminus.put("-x","+y");
         yminus.put("-z","-z");
         yminus.put("+z","+z");
@@ -74,10 +69,11 @@ public class BenderBRodriguez {
 
         while ((L=Integer.parseInt(br.readLine())) > 0 ){
             wpoint = "+x";
-            indications = br.readLine().split(" ");
-            for(int i=0;i < indications.length ;i++){
-                if (!indications[i].equals("No")) {
-                    wpoint = norms.get(indications[i]).get(wpoint);
+            st = new StringTokenizer(br.readLine());
+            while(st.hasMoreTokens()){
+                String ind = st.nextToken();
+                if (!ind.equals("No")) {
+                    wpoint = norms.get(ind).get(wpoint);
                 }
             }
             System.out.println(wpoint);
