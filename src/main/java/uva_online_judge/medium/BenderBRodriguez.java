@@ -16,7 +16,7 @@ public class BenderBRodriguez {
     public static void main (String args[]) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\user\\Documents\\competitive_programming\\src\\main\\java\\uva_online_judge\\medium\\benderRodriguezInput.txt"));
+        //BufferedReader br = new BufferedReader(new FileReader("./src/main/java/uva_online_judge/medium/benderRodriguezInput.txt"));
         int L;
         StringTokenizer st;
         String indications [];
