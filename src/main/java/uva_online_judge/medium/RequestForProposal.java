@@ -16,7 +16,7 @@ public class RequestForProposal {
     public static void main (String args[]) throws IOException {
         //initialize the bufferedReader to read the console
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\user\\Documents\\competitive_programming\\src\\main\\java\\uva_online_judge\\medium\\requestForProposalInput.txt"));
+        //BufferedReader br = new BufferedReader(new FileReader("./src/main/java/uva_online_judge/medium/requestForProposalInput.txt"));
         // declare string tokenizer
         StringTokenizer st;
         String input;
