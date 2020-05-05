@@ -12,7 +12,7 @@ class BrideHandEvaluator {
 
     public static void main(String args[]) throws IOException {
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader br = new BufferedReader( new FileReader("C:\\Users\\user\\Documents\\competitive_programming\\src\\main\\java\\uva_online_judge\\ad_hoc_part1\\input.txt"));
+        BufferedReader br = new BufferedReader( new FileReader("./src/main/java/uva_online_judge/ad_hoc_part1/input.txt"));
         String input;
         StringTokenizer st;
         String suitname [] = {"S","H","D","C"};
