@@ -6,8 +6,8 @@ import java.util.StringTokenizer;
 public class Jollo {
     public static void main (String [] args) throws FileNotFoundException, IOException {
 
-        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-        //BufferedReader br = new BufferedReader( new FileReader("./src/main/java/input.txt"));
+        //BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader( new FileReader("./src/main/java/input.txt"));
         StringTokenizer st;
         String input;
 
@@ -31,12 +31,12 @@ public class Jollo {
             int cards [] = {a,b,c};
             boolean continueSearch = true;
             boolean areAllGamesWon = true;
+
             for (int i = 0;i < cards.length && continueSearch;i++){
                 for (int j = 0;j < cards.length && continueSearch;j++){
 
                     // The indexes have to be different to pick the cards
                     if ( i != j) {
-                        boolean isGameWon = false;
                         boolean picked [] = new boolean [3];
 
                         picked[i] = true;
@@ -61,7 +61,7 @@ public class Jollo {
                             if (winningCard < cards[leftCard]) {
                                 winningCard = giveWinningCard(cards[leftCard]+1, isUsed);
                             }
-                            continueSearch = winningCard == -1 ? false:true;
+                            continueSearch = !(winningCard == -1) ;
                             //if the game is already won in the second round
                         } else if (cards[i] < x &&  cards[j] < y ) {
 
@@ -77,7 +77,7 @@ public class Jollo {
                             if (winningCard < cards[leftCard]) {
                                 winningCard = giveWinningCard(cards[leftCard]+1, isUsed);
                             }
-                            continueSearch = winningCard == -1 ? false:true;
+                            continueSearch = !(winningCard == -1);
                             // if the game is lost
                         } else if (cards[i] > x && cards[j] > y) {
 
